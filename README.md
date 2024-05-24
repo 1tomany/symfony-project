@@ -1,5 +1,5 @@
 # Simple Symfony Project
-This project will allow you to demonstrate your skills and proficiency with PHP and the Symfony framework. You're welcome to make it as simple or as advanced as you would like, but the most important factor is ensuring all of the tasks are completed. We recommend spending less than 90 minutes on it as well.
+This project will allow you to demonstrate your skills and proficiency with PHP and the Symfony framework. You're welcome to make it as simple or as advanced as you would like, but the most important factor is ensuring all of the tasks are completed. We recommend spending less than 90 minutes on it as well. Publish your code as a public repository on GitHub.
 
 ## Project Description
 You will be creating a basic HTTP REST API using Symfony 7 and PHP 8. The API does not need to use any kind of authentication, and will be comprised of four endpoints. To keep this project as simple as possible, we recommend using SQLite3 as a database. The API will use JSON as the format for sending and receiving data. Errors should be handled with JSON as the response as well.
@@ -25,13 +25,13 @@ This endpoint will return the version of the API and the name of the server it i
 #### `GET /customers`
 This endpoint will return all customers in the database sorted by the date they were created in ascending order. A customer should have the following properties:
 
-- `id`
-- `createdAt`
-- `updatedAt`
-- `name`
-- `birthdate`
-- `emailAddress`
-- `notes`
+- `id`: integer, primary key, auto increment, not null
+- `createdAt`: datetimetz, not null
+- `updatedAt`: datetimetz, not null
+- `name`: text, not null
+- `birthdate`: date, null
+- `emailAddress`: text, null
+- `notes`: text, null
 
 ```json
 [
@@ -86,7 +86,7 @@ This endpoint will create a new customer record in the database and return that 
 ```
 
 #### `GET /customers/{customerId}`
-This endpoint will return a specific customer identified by the `{customerId}` parameter, or a 404 Not Found error if the customer does not exist.
+This endpoint will return a specific customer identified by the `{customerId}` parameter, or an error if the customer does not exist.
 
 ```json
 {
